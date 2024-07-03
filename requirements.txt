@@ -1,0 +1,11 @@
+Bio>=1.6.0
+biopython>=1.80
+DendroPy>=4.6.0
+matplotlib>=3.7.1
+numpy>=1.24.2
+pandas>=2.0.0
+regex>=2023.3.23
+seaborn>=0.13.0
+tqdm>=4.65.0
+
+

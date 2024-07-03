@@ -1,0 +1,78 @@
+
+
+IMPORTANT WARNING: Sequences mono-chu-like_YP_009337854.1_Shahe_yuevirus-like_virus_1 and other-negative-like_yuevirus_SHWC0209c11789_Shahe_yuevirus-like_virus_1_RdRp_len6578 are exactly identical
+
+IMPORTANT WARNING
+Found 1 sequence that is exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with 
+sequence duplicates removed is printed to file Yuevirus_trimmed_alignment.phy.reduced
+
+
+This is RAxML version 7.2.8 released by Alexandros Stamatakis in August 2010.
+
+With greatly appreciated code contributions by:
+Andre Aberer (TUM)
+Simon Berger (TUM)
+John Cazes (TACC)
+Michael Ott (TUM)
+Nick Pattengale (UNM)
+Wayne Pfeiffer (SDSC)
+Akifumi S. Tanabe (Univ. Tsukuba)
+
+
+Alignment has 1538 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 3.16%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 1 inferences on the original alignment using 1 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heteorgeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 1538
+Name: No Name Provided
+DataType: AA
+Substitution Matrix: LG
+Empirical Base Frequencies:
+
+
+
+
+RAxML was called as follows:
+
+/home/yangziyue/software/raxml-7.2.8/raxmlHPC-PTHREADS -m PROTGAMMALGF -s Yuevirus_trimmed_alignment.phy -p 12345 -T 5 -n test 
+
+
+Testing which likelihood implementation to use
+Standard Implementation full tree traversal time: 0.127305
+Subtree Equality Vectors for gap columns full tree traversal time: 0.033626
+... using SEV-based implementation
+
+Inference[0]: Time 2.902745 GAMMA-based likelihood -17593.454936, best rearrangement setting 2
+alpha[0]: 1.497658 
+
+
+Conducting final model optimizations on all 1 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -17593.425306 tree written to file /home/yangziyue/data/VirID_software/VirID_20230416_v2/VirID/data/RdRP_tree_230328/Yuevirus/RAxML_result.test
+
+
+Starting final GAMMA-based thorough Optimization on tree 0 likelihood -17593.425306 .... 
+
+Final GAMMA-based Score of best tree -17593.425306
+
+Program execution info written to /home/yangziyue/data/VirID_software/VirID_20230416_v2/VirID/data/RdRP_tree_230328/Yuevirus/RAxML_info.test
+Best-scoring ML tree written to: /home/yangziyue/data/VirID_software/VirID_20230416_v2/VirID/data/RdRP_tree_230328/Yuevirus/RAxML_bestTree.test
+
+Overall execution time: 3.263885 secs or 0.000907 hours or 0.000038 days
+
