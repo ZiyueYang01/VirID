@@ -86,7 +86,7 @@ If you already have these databases, you can skip the download step and just con
 
 #### rRNA
 
-- 1.1 Download the file from this [link](https://drive.google.com/file/d/1PDbuIG1ZcMRWrQ8nhE50p33B2J1IposQ/view?usp=drive_link).
+- 1.1 Download the file from this [link](https://drive.google.com/file/d/1PDbuIG1ZcMRWrQ8nhE50p33B2J1IposQ/view?usp=sharing).
 
 - 1.2 Unzip the file and Using ***[bowtie2](https://github.com/BenLangmead/bowtie2)*** to build the index.
     ```shell
