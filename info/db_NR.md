@@ -8,7 +8,7 @@ Here we provide two ways to download the NR database, but there are also other w
 
 Files are large and can take a lot of time depending on the network.
 
-**Note:The final index path for both methods needs to be: `$VirID_DB_PATH/NR/nr`**
+**Note:The final index path for both methods needs to be: `"$VirID_DB_PATH"/NR/nr`**
 
 ### 1. From the sequences
 
@@ -27,19 +27,19 @@ Files are large and can take a lot of time depending on the network.
 
   - **1.3 Using ***[diamond](https://github.com/bbuchfink/diamond)*** to build the index.**
     ```shell
-      diamond makedb --in nr.gz -d $VirID_DB_PATH/NR/nr
+      diamond makedb --in nr.gz -d "$VirID_DB_PATH"/NR/nr
     ```
 
 ### 2. From the pre-builded BLAST index
 
   - **2.1 Download the index file.**
 
-     These indexes are constructed from multiple files, currently numbered from 00 to 83, and possibly more in the future.(from `nr.00.tar.gz` to `nr.83.tar.gz`)
+     These indexes are constructed from multiple files, currently numbered from 00 to 97, and possibly more in the future.(from `nr.00.tar.gz` to `nr.97.tar.gz`)
 
       ```shell
       cd VirID_DB_PATH/NR
 
-      for i in {00..83}; 
+      for i in {00..97}; 
         do
           base_url="https://ftp.ncbi.nlm.nih.gov/blast/db/nr.$i"
           tar_url="$base_url.tar.gz"
@@ -54,7 +54,7 @@ Files are large and can take a lot of time depending on the network.
 
   - **2.2 Check for the file integrity.**
     ```shell
-    for i in {00..83}; 
+    for i in {00..97}; 
       do
         md5_path="nr.$i.tar.gz.md5"
         md5sum -c "$md5_path"
@@ -64,10 +64,10 @@ Files are large and can take a lot of time depending on the network.
 
   - **2.3 Unzip the files.**
     ```shell
-    for i in {00..83}; 
+    for i in {00..97}; 
       do
         index_path="nr.$i.tar.gz"
-        tar -zxvf "$index_path" -C VirID_DB_PATH/NR
+        tar -zxvf "$index_path" -C "$VirID_DB_PATH"/NR
       done
     ```
 
