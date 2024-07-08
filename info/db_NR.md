@@ -4,9 +4,14 @@ We use diamond to perform protein sequence alignment.
 
 There are two methods to construct the necessary NR database for use with diamond
 
-The final index path for both methods needs to be: `VirID_DB_PATH/NR/nr`
+Here we provide two ways to download the NR database, but there are also other ways to download it.
+
+Files are large and can take a lot of time depending on the network.
+
+**Note:The final index path for both methods needs to be: `$VirID_DB_PATH/NR/nr`**
 
 ### 1. From the sequences
+
   - **1.1 Download the sequence file.**
     ```shell
       wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
@@ -22,7 +27,7 @@ The final index path for both methods needs to be: `VirID_DB_PATH/NR/nr`
 
   - **1.3 Using ***[diamond](https://github.com/bbuchfink/diamond)*** to build the index.**
     ```shell
-      diamond makedb --in nr.gz -d VirID_DB_PATH/NR/nr
+      diamond makedb --in nr.gz -d $VirID_DB_PATH/NR/nr
     ```
 
 ### 2. From the pre-builded BLAST index
