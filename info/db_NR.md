@@ -1,7 +1,9 @@
 ## NCBI Non-Redundant Protein Database (NR)
 
 We use diamond to perform protein sequence alignment.
-There are two ways to construct the required NR database.
+
+There are two methods to construct the necessary NR database for use with diamond
+
 The final index path for both methods needs to be: `VirID_DB_PATH/NR/nr`
 
 ### 1. From the sequences
@@ -9,12 +11,12 @@ The final index path for both methods needs to be: `VirID_DB_PATH/NR/nr`
     ```shell
       wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
 
-      wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
+      wget -c https://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz.md5
     ```
 
   - **1.2 Check for the file integrity.**
     ```shell
-      md5sum -c prot.accession2taxid.gz.md5
+      md5sum -c nr.gz.md5
     ```
       If the result is ok, then next step
 
@@ -73,10 +75,4 @@ The final index path for both methods needs to be: `VirID_DB_PATH/NR/nr`
       diamond prepdb -d VirID_DB_PATH/NR/nr
       ```
 
-      
-**Note**: You can also use the BLAST's script to download the index files
-
-  ```shell
-  update_blastdb.pl --decompress --blastdb_version 5 nr
-  ```
 
