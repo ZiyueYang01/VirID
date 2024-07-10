@@ -27,7 +27,7 @@ Files are large and can take a lot of time depending on the network.
 
   - **1.3 Using ***[diamond](https://github.com/bbuchfink/diamond)*** to build the index.**
     ```shell
-      diamond makedb --in nr.gz -d "$VirID_DB_PATH"/NR/nr
+      diamond makedb --in nr.gz -d "$"/NR/nr
     ```
 
 ### 2. From the pre-builded BLAST index
@@ -37,7 +37,7 @@ Files are large and can take a lot of time depending on the network.
      These indexes are constructed from multiple files, currently numbered from 00 to 97, and possibly more in the future.(from `nr.00.tar.gz` to `nr.97.tar.gz`)
 
       ```shell
-      cd VirID_DB_PATH/NR
+      cd "$VirID_DB_PATH"/NR
 
       for i in {00..97}; 
         do
@@ -77,7 +77,7 @@ Files are large and can take a lot of time depending on the network.
   To use the *prepdb* command, you've been advised to install [diamond]((https://github.com/bbuchfink/diamond)) from its GitHub repository instead of using the Conda installation.
       
       ```shell
-      diamond prepdb -d VirID_DB_PATH/NR/nr
+      diamond prepdb -d "$VirID_DB_PATH"/NR/nr
       ```
 
 
