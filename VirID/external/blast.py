@@ -84,8 +84,11 @@ class Diamond(object):
         else:
             args = ['diamond','blastx', '-q', origin_file, '-d', self.database_path, '-o', 
                  output_tsv, '-e', '1E-4', '-k', str(1), '-p', str(self.threads),'-f',str(6)]
-        for a in self.out_type:
-            args.append(a)
+        
+        if model != "makedb":
+            for a in self.out_type:
+                args.append(a)
+                
         diamond_log = output_tsv+"_log.txt"
         with open(diamond_log, 'a+') as f_out_err:
             proc = subprocess.Popen(
@@ -96,7 +99,7 @@ class Diamond(object):
             self.logger.error(
                 'An error was encountered while running Diamond.')
             raise ExternalException('Diamond returned a non-zero exit code.')
-        if not os.path.isfile(output_tsv):
+        if model != "makedb" and not os.path.isfile(output_tsv):
             self.logger.error(
                 'An error was encountered while running Diamond.')
             raise ExternalException(
