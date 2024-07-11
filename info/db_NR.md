@@ -74,7 +74,7 @@ Files are large and can take a lot of time depending on the network.
   - **2.4 Rebuild the indexes.**
     
     **Note:**
-  To use the *prepdb* command, you've been advised to install [diamond]((https://github.com/bbuchfink/diamond)) from its GitHub repository instead of using the Conda installation.
+  To use the ***prepdb*** command, you need to install [diamond](https://github.com/bbuchfink/diamond/releases) from its GitHub repository instead of using the Conda installation.
       
       ```shell
       diamond prepdb -d "$VirID_DB_PATH"/NR/nr
