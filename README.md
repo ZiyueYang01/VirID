@@ -128,11 +128,11 @@ VirID *medthod* [options]
 
 ```shell
 VirID end_to_end  -i 1.fastq -i2 2.fastq \
-    -out_dir out_path  --threads 60 --keep-dup
+    -out_dir out_path  --threads 60 --keep_dup
 	
 VirID assembly_and_basic_annotation -i 1.fastq -i2 2.fastq \
     -out_dir out_path  --threads 60 
 	
 VirID phylogenetic_analysis -classify_i test/test_contig.fasta   \
-	-out_dir out_path   --threads 90 --keep-dup
+	-out_dir out_path   --threads 90 --keep_dup
 ```

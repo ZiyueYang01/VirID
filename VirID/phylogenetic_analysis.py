@@ -325,8 +325,7 @@ class Phylogenetic_analysis(object):
 
     def _compare(self):
         out_type = ["qseqid", "qlen", "sseqid", "slen", "pident", "length", "evalue"]
-        print(RdRP_DB_PATH+".dmnd")
-        print(os.path.exists(RdRP_DB_PATH+".dmnd"))
+
         if  os.path.exists(RdRP_DB_PATH+".dmnd") is False:
             Diamond(RdRP_DB_PATH,self.threads, 'a').run(RdRP_DB_PATH+".fas",'a',model="makedb")
         diamond = Diamond(RdRP_DB_PATH,self.threads,out_type)

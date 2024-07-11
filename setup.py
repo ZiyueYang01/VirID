@@ -16,7 +16,7 @@ def package_files(dir_list):
 dir_path = os.path.dirname(__file__)
 extra_files = package_files([dir_path+'/VirID/'])
 
-print(extra_files)
+
 
 setup(
     name='VirID',
