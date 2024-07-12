@@ -1,3 +1,5 @@
+# Updating...
+
 ## NCBI Nucleotide database (nt) wihtout viruses
 The following are the steps to exclude virus sequences from the nt database from the sequence file in the `fasta` format 
 
@@ -31,20 +33,23 @@ The following are the steps to exclude virus sequences from the nt database from
 
 ### Step 2. Remove the viral sequences listed in [NCBI Virus](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/).
 We have pre-collected all virus nucleic acid [sequence IDs](./NCBI_Virus_AccessionList_20240617.tar.gz) (as of 17 June 2024) available in the NCBI Virus website.
+Another download [link](https://drive.google.com/file/d/1Rx_CGeg0yPOAfMJwVCxMVFFNgBPzOo3r/view?usp=drive_link)
 
   - **2.1 Download and decompress the virus nucleic acid sequence IDs list.**
     ```shell
-      wget -c https://github.com/ZiyueYang01/VirID/blob/main/info/NCBI_Virus_AccessionList_20240617.tar.gz
+      # Download manually from the link above.
     
-      tar -jxvf NCBI_Virus_RNA_viruses_AccessionList_20240617.tar.gz
+      tar -jxvf NCBI_Virus_AccessionList_20240617.tar.gz
     
       cat NCBI_Virus_*_AccessionList_20240617.tsv > NCBI_Virus_All_Nucleotides_Accession_List_20240617.tsv
     ```
   - **2.2 Download and decompress the virus nucleic acid sequence IDs list.**
     ```shell
+      seqkit seq -n -i nt.fasta > nt.id
+      seqkit seq -n nt.fasta > nt.title
+    
       seqkit grep -f NCBI_Virus_All_Nucleotides_Accession_List_20240617.tsv -v nt.fasta -o nt_noViruses_0.fas
     ```
-
 
 ### Step 3.Remove the viral sequences based on their taxonomic IDs (taxids)
 
