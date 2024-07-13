@@ -38,10 +38,10 @@ class Rmdup(object):
         env = os.environ.copy()
 
         if len(input_file) == 2:
-            args = ['cd-hit', '-i', input_file[0], '-i2', input_file[1], 
+            args = ['cd-hit-est', '-i', input_file[0], '-i2', input_file[1], 
                     '-o', out_file[0],'-o2', out_file[1]]
         elif len(input_file) == 1:
-            args = ['cd-hit', '-i', input_file[0],'-o', out_file[0]]
+            args = ['cd-hit-est', '-i', input_file[0],'-o', out_file[0]]
 
         proc = subprocess.Popen(
                 args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env)
