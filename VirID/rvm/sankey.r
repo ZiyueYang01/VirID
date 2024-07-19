@@ -7,7 +7,7 @@ library(networkD3)
 library(dplyr)
 library(ggplot2)
 
-data <- read.csv(args[1])
+# data <- read.csv(args[1])
 
 nodes <- data.frame(name = unique(c(data$`Node1`, data$`Node2`)))
 nodes_group <- unique(merge(nodes, data[ ,colnames(data) %in% c("Node1","group")], by.x = "name", by.y = "Node1",all = TRUE))

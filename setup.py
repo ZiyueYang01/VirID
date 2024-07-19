@@ -20,9 +20,9 @@ extra_files = package_files([dir_path+'/VirID/'])
 
 setup(
     name='VirID',
-    version='1.2.0',
+    version='1.4.0',
     author="YangZiyue&ShanYongtao",
-    author_email="yangzy58@sysu.edu.cn",
+    author_email="yangzy58@mail2.sysu.edu.cn",
     packages=find_packages(),
     package_data={'': extra_files},
 
