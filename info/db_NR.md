@@ -39,7 +39,7 @@ Files are large and can take a lot of time depending on the network.
       ```shell
       cd "$VirID_DB_PATH"/NR
 
-      for i in {00..97}; 
+      for i in {00..99}; 
         do
           base_url="https://ftp.ncbi.nlm.nih.gov/blast/db/nr.$i"
           tar_url="$base_url.tar.gz"
