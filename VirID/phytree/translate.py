@@ -11,11 +11,12 @@ warnings.filterwarnings('ignore')
 
 
 class Translate(object):
-    def __init__(self, out_dir, outfile_aa,aa_length,mode,clustr_name=""):
+    def __init__(self, out_dir, outfile_aa,aa_length,mode,clustr_name="",translate_table=1):
         self.out_dir = out_dir
         self.outfile_aa = outfile_aa
         self.aa_length = aa_length
         self.mode = mode
+        self.table = translate_table
         self.clustr_name = clustr_name
         self.logger = logging.getLogger('timestamp')
         
@@ -29,7 +30,7 @@ class Translate(object):
                     match = re.match('((ATG(?:\S{3})*?T(?:AG|AA|GA))|ATG(?:\S{3})*)', str(seq[index:]))
                     if match:
                         orf = Seq(match.group().strip())
-                        prot = orf.translate()
+                        prot = orf.translate(table=self.table)
                         if len(prot) > self.aa_length:
                             amino_acids.append(str(prot).replace('*',''))
                         index += len(orf)

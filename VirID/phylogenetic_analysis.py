@@ -23,6 +23,7 @@ class Phylogenetic_analysis(object):
     def __init__(self,input_file,out_dir,options):
         self.input_file = input_file
         self.threads = options.threads
+        self.translate_table = options.translate_table
         self.out_dir = out_dir
         self.out_pair_path = os.path.abspath(os.path.join(self.out_dir, ".."))
         self.group_list = options.group_list
@@ -157,7 +158,8 @@ class Phylogenetic_analysis(object):
         clustr_translate_file = f"{clustr_dir}/{clustr_name}_query_prot.fasta"
         ref_fasta = f"{INTER_RdRP_CLUSTR_PATH}/{clustr_name}/{clustr_name}.fas"
 
-        translate_item = Translate(clustr_dir,True,clustr_aa_length,'build_tree',clustr_name=clustr_name)
+        translate_item = Translate(clustr_dir,True,clustr_aa_length,'build_tree',
+                                   clustr_name=clustr_name,translate_table = self.translate_table)
         shortORF_ID,ORFlength_table = translate_item.run(clustr_query_file,clustr_translate_file)
         if os.path.getsize(clustr_translate_file) < 1:
             self.logger.warn(f'{clustr_name}:All contigs do not reach the threshold, end.')

@@ -9,10 +9,11 @@ from VirID.config.config import NT_DB_PATH
 from VirID.external.blast import Blastn
 
 class Trim_contamination(object):
-    def __init__(self,out_dir,threads):
+    def __init__(self,out_dir,threads,translate_table):
         """Instantiate the class."""
         self.out_dir = out_dir
         self.threads = threads 
+        self.translate_table = translate_table
         self.logger = logging.getLogger('timestamp')
     
     def run(self,input_file):
@@ -33,7 +34,7 @@ class Trim_contamination(object):
         output_nt_fasta = os.path.join(self.out_dir,"step10_blastn_trimed.fasta")
 
         len_dic = {}
-        translate = Translate(self.out_dir,True,200,'nt')
+        translate = Translate(self.out_dir,True,200,'nt',translate_table = self.translate_table)
         origin_orf_table = {}
         
         with open(output_nt_fasta, 'w') as fw:

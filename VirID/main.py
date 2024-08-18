@@ -44,7 +44,8 @@ class OptionsParser(object):
         else:
             reads_list = [options.i]
 
-        assembly_and_basic_annotation_item = assembly_and_basic_annotation(reads_list,assembly_and_basic_annotation_path,options.threads)
+        assembly_and_basic_annotation_item = assembly_and_basic_annotation(reads_list,assembly_and_basic_annotation_path,
+                                                                           options.threads,options.translate_table)
         rm_rRNA_file,filename = assembly_and_basic_annotation_item.qc_with_rm_rRNA()
 
         accession_tax_VirusesFlitered_file = assembly_and_basic_annotation_item.run(options,rm_rRNA_file,filename)
@@ -72,7 +73,8 @@ class OptionsParser(object):
 
         if options.no_trim_contamination is False:
             self.logger.info('[assembly_and_basic_annotation] Cut the sequence contamination at both ends of contigs')
-            output_nt_fasta = Trim_contamination(assembly_and_basic_annotation_path,options.threads).run(accession_tax_VirusesFlitered_file)
+            output_nt_fasta = Trim_contamination(assembly_and_basic_annotation_path,
+                                                 options.threads,options.translate_table).run(accession_tax_VirusesFlitered_file)
             res_file = output_nt_fasta
         else:
             res_file = accession_tax_VirusesFlitered_file

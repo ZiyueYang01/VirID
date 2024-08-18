@@ -40,6 +40,11 @@ def __out_dir(group, required):
 def __threads(group):
     group.add_argument('--threads', type=int,default=1,
                        help='Threads num')
+
+
+def __translate_table(group):
+    group.add_argument('--translate_table', type=int,default=1,
+                       help='Genetic code')
     
 def __group_list(group):
     group.add_argument('--group_list', nargs='*', default='',
@@ -75,6 +80,7 @@ def get_main_parser():
         with arg_group(parser, 'optional arguments') as grp:
             __reads_2(grp)
             __threads(grp)
+            __translate_table(grp)
             __no_trim_contamination(grp)
             __keep_dup(grp)
             __group_list(grp)

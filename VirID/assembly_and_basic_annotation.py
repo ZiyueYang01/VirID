@@ -12,11 +12,12 @@ from VirID.rvm.main_taxon import main_taxon
 
 
 class assembly_and_basic_annotation(object):
-    def __init__(self,reads,out_dir,threads):
+    def __init__(self,reads,out_dir,threads,translate_table):
         """Instantiate the class."""
         self.reads = reads
         self.out_dir = out_dir
         self.threads = threads 
+        self.translate_table = translate_table
         self.logger = logging.getLogger('timestamp')
 
     def _reads_qc_single(self,reads):
@@ -131,7 +132,7 @@ class assembly_and_basic_annotation(object):
             sys.exit()
 
         self.logger.info(f'[assembly_and_basic_annotation] Remove contigs that cannot be translated into longer amino acid contigs.')
-        translate_item = Translate(os.path.join(self.out_dir),False,200,'nt')
+        translate_item = Translate(os.path.join(self.out_dir),False,200,'nt',translate_table=self.translate_table)
         translate_filter_file = os.path.join(self.out_dir,"step8_shortORF_exclude.fasta")
         translate_filter_tsv = os.path.join(self.out_dir,"step8_shortORF_exclude.tsv")
         shortORF_ID,ORFlength_tsv = translate_item.run(nr_out_fasta,translate_filter_file)
