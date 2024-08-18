@@ -39,7 +39,7 @@ Files are large and can take a lot of time depending on the network.
       ```shell
       cd "$VirID_DB_PATH"/NR
 
-      for i in {00..97}; 
+      for i in {00..99}; 
         do
           base_url="https://ftp.ncbi.nlm.nih.gov/blast/db/nr.$i"
           tar_url="$base_url.tar.gz"
@@ -54,7 +54,7 @@ Files are large and can take a lot of time depending on the network.
 
   - **2.2 Check for the file integrity.**
     ```shell
-    for i in {00..97}; 
+    for i in {00..99}; 
       do
         md5_path="nr.$i.tar.gz.md5"
         md5sum -c "$md5_path"
@@ -64,7 +64,7 @@ Files are large and can take a lot of time depending on the network.
 
   - **2.3 Unzip the files.**
     ```shell
-    for i in {00..97}; 
+    for i in {00..99}; 
       do
         index_path="nr.$i.tar.gz"
         tar -zxvf "$index_path" -C "$VirID_DB_PATH"/NR
