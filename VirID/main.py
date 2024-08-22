@@ -138,7 +138,7 @@ class OptionsParser(object):
 
         if options.subparser_name == 'end_to_end':
             check_dependencies(['bbduk.sh',
-                    'diamond','seqkit','bowtie2','cd-hit','taxonkit',
+                    'diamond','seqkit','bowtie2','taxonkit',
                     'megahit','makeblastdb','blastn',
                     'blastp','mafft','trimal','pplacer','guppy'])
             
@@ -147,14 +147,14 @@ class OptionsParser(object):
             self.phylogenetic_analysis(options)
 
         elif options.subparser_name == 'assembly_and_basic_annotation':
-            check_dependencies(['bbduk.sh','cd-hit',
+            check_dependencies(['bbduk.sh',
                     'diamond','seqkit','bowtie2','taxonkit',
                     'megahit','makeblastdb','blastn',
                     'blastp'])
 
             self.assembly_and_basic_annotation(options)
         elif options.subparser_name == 'phylogenetic_analysis':
-            check_dependencies(['bbduk.sh','cd-hit',
+            check_dependencies(['bbduk.sh',
                     'diamond','seqkit','makeblastdb','blastn','taxonkit',
                     'blastp','mafft','trimal','pplacer','guppy'])
 

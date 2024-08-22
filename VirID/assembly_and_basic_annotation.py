@@ -3,7 +3,7 @@ import os
 from os import system
 import pandas as pd
 import sys
-from VirID.config.config import RdRP_DB_PATH, NR_DB_PATH, rRNA_DB_PATH,BBDUK_PATH
+from VirID.config.config import RdRP_DB_PATH, NR_DB_PATH, rRNA_DB_PATH
 from VirID.external.fasta_process import Rmdup, Seqkit
 from VirID.external.reads_tool import Bowtie2, Megahit
 from VirID.external.blast import Diamond 

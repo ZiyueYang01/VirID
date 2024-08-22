@@ -6,7 +6,7 @@ LOG_TASK = 21
 VirID_path = os.path.abspath(os.path.join(os.path.dirname(__file__),os.path.pardir))
 
 
-BBDUK_PATH = join(VirID_path, 'external','package','bbmap',"bbduk.sh")
+Package_PATH = join(VirID_path, 'external')
 
 RdRP_DB_PATH = join(VirID_path, 'data', 'diamond_database', 'RdRP_230330_rmdup')
 RdRP_DB_TABLE_PATH = join(VirID_path, 'data', 'diamond_database', 'RdRp_expanded_20230330.csv')

@@ -92,6 +92,7 @@ def get_main_parser():
             __out_dir(grp, required=True)
         with arg_group(parser, 'optional arguments') as grp:
             __reads_2(grp)
+            __translate_table(grp)
             __threads(grp)
             __no_trim_contamination(grp)
             __ultra_sensitive(grp)
@@ -101,6 +102,7 @@ def get_main_parser():
             __out_dir(grp, required=True)
         with arg_group(parser, 'optional arguments') as grp:
             __threads(grp)
+            __translate_table(grp)
             __keep_dup(grp)
             __group_list(grp)
             __group_aa_length(grp)

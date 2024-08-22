@@ -1,6 +1,8 @@
 import logging
 import os
 import subprocess
+from os import system
+from VirID.config.config import Package_PATH
 from VirID.biolib.exceptions import ExternalException
 class Seqkit(object):
 
@@ -36,12 +38,12 @@ class Rmdup(object):
     
     def run(self,input_file,out_file):
         env = os.environ.copy()
-
+        system(f'chmod 777 {Package_PATH}/cd-hit-dup')
         if len(input_file) == 2:
-            args = ['cd-hit-est', '-i', input_file[0], '-i2', input_file[1], 
+            args = [Package_PATH+'/cd-hit-dup', '-i', input_file[0], '-i2', input_file[1], 
                     '-o', out_file[0],'-o2', out_file[1]]
         elif len(input_file) == 1:
-            args = ['cd-hit-est', '-i', input_file[0],'-o', out_file[0]]
+            args = [Package_PATH+'/cd-hit-dup', '-i', input_file[0],'-o', out_file[0]]
 
         proc = subprocess.Popen(
                 args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env)
