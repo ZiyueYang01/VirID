@@ -280,7 +280,7 @@ class Phylogenetic_analysis(object):
         filename = os.path.split(input_csv)[1].split('.')[0]
         seqkit.run(self.input_file,f"{output_file_dir}/{filename}.fasta","grep",ID_txt)
         fieldnames = ["qseqid", "qlen", "sseqid", "stitle", "slen", "pident", "length", "evalue"]
-        diamond = Diamond(NR_DB_PATH,self.threads,fieldnames)
+        diamond = Diamond(NR_DB_PATH,self.threads,fieldnames,self.translate_table)
         if os.path.exists(os.path.join(self.out_pair_path,"assembly_and_basic_annotation")+"/step7_NR.tsv"):
             diamond_nr_out_tsv =os.path.join(self.out_pair_path,"assembly_and_basic_annotation")+"/step7_NR.tsv"
         else:
@@ -329,8 +329,8 @@ class Phylogenetic_analysis(object):
         out_type = ["qseqid", "qlen", "sseqid", "slen", "pident", "length", "evalue"]
 
         if  os.path.exists(RdRP_DB_PATH+".dmnd") is False:
-            Diamond(RdRP_DB_PATH,self.threads, 'a').run(RdRP_DB_PATH+".fas",'a',model="makedb")
-        diamond = Diamond(RdRP_DB_PATH,self.threads,out_type)
+            Diamond(RdRP_DB_PATH,self.threads, 'a',self.translate_table).run(RdRP_DB_PATH+".fas",'a',model="makedb")
+        diamond = Diamond(RdRP_DB_PATH,self.threads,out_type,self.translate_table)
         diamond_out_tsv = os.path.join(self.out_dir)+"/diamond_all.tsv"
         diamond.run(self.input_file,diamond_out_tsv)
         return diamond_out_tsv

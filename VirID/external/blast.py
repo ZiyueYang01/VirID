@@ -67,10 +67,11 @@ class Blastp(object):
 
 class Diamond(object):
 
-    def __init__(self, database_path,threads,out_type):
+    def __init__(self, database_path,threads,out_type,translate_table):
         self.threads = threads
         self.database_path = database_path
         self.out_type = out_type
+        self.translate_table = translate_table
         self.logger = logging.getLogger('timestamp')
 
     def run(self, origin_file, output_tsv,model=""):
@@ -78,12 +79,12 @@ class Diamond(object):
 
         if model=='ultra_sensitive':
             args = ['diamond','blastx', '-q', origin_file, '-d', self.database_path, '-o', 
-                 output_tsv, '-e', '1E-4', '-k', str(1), '-p', str(self.threads),'--ultra-sensitive', '-f',str(6)]
+                 output_tsv, '-e', '1E-4', '--query-gencode',self.translate_table,'-k', str(1), '-p', str(self.threads),'--ultra-sensitive', '-f',str(6)]
         elif model == "makedb":
             args = ['diamond','makedb', '--in', origin_file, '-d', self.database_path]
         else:
             args = ['diamond','blastx', '-q', origin_file, '-d', self.database_path, '-o', 
-                 output_tsv, '-e', '1E-4', '-k', str(1), '-p', str(self.threads),'-f',str(6)]
+                 output_tsv, '-e', '1E-4', '--query-gencode',self.translate_table, '-k', str(1), '-p', str(self.threads),'-f',str(6)]
         
         if model != "makedb":
             for a in self.out_type:

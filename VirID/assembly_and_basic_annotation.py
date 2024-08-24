@@ -67,8 +67,8 @@ class assembly_and_basic_annotation(object):
 
     def _diamond_item(self,database,out_type,input_file,out_fasta,out_tsv,model):
         if os.path.exists(RdRP_DB_PATH+".dmnd") is False:
-            Diamond(RdRP_DB_PATH,self.threads, 'a').run(RdRP_DB_PATH+".fas",'a',model="makedb")
-        diamond_item= Diamond(database,self.threads, out_type)
+            Diamond(RdRP_DB_PATH,self.threads, 'a',self.translate_table).run(RdRP_DB_PATH+".fas",'a',model="makedb")
+        diamond_item= Diamond(database,self.threads, out_type,self.translate_table)
         diamond_item.run(input_file,out_tsv,model)
         output_tsv_list = out_tsv+"_ID.txt"
         system(f'cut -f1 {out_tsv} |sort -u > {output_tsv_list}')
