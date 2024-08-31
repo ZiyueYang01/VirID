@@ -105,7 +105,7 @@ class assembly_and_basic_annotation(object):
         self.logger.info('[assembly_and_basic_annotation] Use megahit to splice reads into contigs')
         megahit_item = Megahit(self.threads)
         out_dir =  os.path.join(self.out_dir, "step5_Megahit_output")
-        megahit_out_dir = megahit_item.run(rm_rRNA_file,300,out_dir)
+        megahit_out_dir = megahit_item.run(rm_rRNA_file,600,out_dir)
         megahit_out_fasta = os.path.join(self.out_dir,"step5_Megahit_output.fasta")
         system(f'sed "s/ /_/g" {megahit_out_dir}/final.contigs.fa | sed "s/k/"{filename}"_k/g"| sed "s/=/_/g" > {megahit_out_fasta}')
 
