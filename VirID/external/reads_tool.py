@@ -66,12 +66,12 @@ class Megahit(object):
 
         if len(input_file) == 2:
                 args = ['megahit', '-1', input_file[0],'-2', input_file[1],
-                        '--num-cpu-threads', str(self.threads), '--memory', str(0.9),
+                        '--num-cpu-threads', str(self.threads), '--memory', str(1),
                         '--min-contig-len',str(cut_len),
                         '-o', out_dir]
         elif len(input_file) == 1:
                 args = ['megahit', '-r', input_file[0],
-                        '--num-cpu-threads', str(self.threads), '--memory', str(0.9),
+                        '--num-cpu-threads', str(self.threads), '--memory', str(1),
                         '--min-contig-len',str(cut_len),
                         '-o', out_dir]
 
