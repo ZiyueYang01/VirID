@@ -45,7 +45,7 @@ AA_LENGTH_DICT = {
     "Narna-Levi":200,
     "Nido":200,
     "Negative_Orthomyxo":200,
-    "Partiti-Picobirna":200,
+    "Partiti-Picobirna":400,
     "Picorna-Calici":200,
     "Weivirus":200,
     "Yanvirus":200,
@@ -53,7 +53,8 @@ AA_LENGTH_DICT = {
     "Zhaovirus":200,
     "Qinvirus":200,
     "Reo":200,
-    "na-daxi":200,
+    "na-daxi":200, # Quenya
+
     "other-negative":200,
     "Tombus-Noda":200,
     "Toti-Chryso":200
