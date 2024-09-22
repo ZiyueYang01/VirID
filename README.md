@@ -19,7 +19,7 @@
 VirID requires third-party packages from the conda-forge and bioconda channels
 
 ```shell
-conda install -c bioconda blast bbmap seqkit  mafft megahit trimal  pplacer  taxonkit  bowtie2 cd-hit
+conda install -c bioconda blast bbmap seqkit  mafft megahit trimal  pplacer  taxonkit  bowtie2
 conda install taxonkit diamond==2.1.4  bowtie2 samtools==1.16.1
 pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  tqdm
 ```
@@ -30,8 +30,8 @@ pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  
   - mafft v7.520 ；trimal v1.4.1 ；makeblastdb,blastn,blastp v2.13.0+
   - samtools v1.16.1 ；diamond v2.1.4
 
+- [cd-hit-dup](https://github.com/weizhongli/cdhit) should be downloaded!
 - The [taxonkit](https://bioinf.shenwei.me/taxonkit/download/) dataset should also be downloaded!
-
 
 ### Step 2: Install VirID via pip
 
