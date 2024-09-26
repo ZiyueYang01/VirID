@@ -1,15 +1,29 @@
-# VirID
+# **VirID**: Beyond Virus Discovery - An Integrated Platform for Comprehensive RNA Virus Characterization
 ![python3.8](https://img.shields.io/badge/python-3.8-brightgreen)
 
+RNA viruses exhibit vast phylogenetic diversity and can significantly impact public health and agriculture. However, current bioinformatics tools for viral discovery from metagenomic data frequently generate false positive virus results, overestimate viral diversity, and misclassify virus sequences. Additionally, current tools often fail to determine virus-host associations, which hampers investigation of the potential threat posed by a newly detected virus. 
+
+To address these issues we developed VirID, a software tool specifically designed for the discovery and characterization of RNA viruses from metagenomic data. 
+
+The basis of VirID is a comprehensive RNA-dependent RNA polymerase (RdRP) database to enhance a workflow that includes RNA virus discovery, phylogenetic analysis, and phylogeny-based virus characterization. Benchmark tests on a simulated data set demonstrated that VirID had high accuracy in profiling viruses and estimating viral richness. 
+
+In evaluations with real-world samples, VirID was able to identity RNA viruses of all type, but also provided accurate estimations of viral genetic diversity and virus classification, as well as comprehensive insights into virus associations with humans, animals, and plants. VirID therefore offers a robust tool for virus discovery and serves as a valuable resource in basic virological studies, pathogen surveillance, and early warning systems for infectious disease outbreaks.
 
 
-## Model
+---
+**Associated papers**
+
+Preprint
+- [Yang Z, Shan Y, Liu X, et al. VirID: Beyond Virus Discovery-An Integrated Platform for Comprehensive RNA Virus Characterization[J]. bioRxiv, 2024: 2024.07. 05.602175.](https://www.biorxiv.org/content/10.1101/2024.07.05.602175v2.full.pdf+html)
+
+
+## VirID workflow
 
 
 
 | ![Image](./info/pipeline.jpg)|
 |:--:|
-| VirID automates RNA virus detection in three stages: RNA virus discovery, phylogenetic analysis, and phylogeny-based virus characterization. It outputs viral sequences, phylogenetic trees, and detailed reports, offering flexibility and accuracy in identifying putative viral sequences and their host associations. | 
+| The VirID framework for automated RNA virus detection, which comprises three main stages:(i) RNA virus discovery, (ii) phylogenetic analysis, and (iii) phylogeny-based virus characterization. It produces outputs that include viral sequences, phylogenetic trees, and comprehensive information including sequence length, best match of BLASTx comparison, virus classification, and host association. | 
 
 ## Installation
 - python>=3.8
