@@ -30,7 +30,7 @@ pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  
   - mafft v7.520 ；trimal v1.4.1 ；makeblastdb,blastn,blastp v2.13.0+
   - samtools v1.16.1 ；diamond v2.1.4
 
-- [cd-hit-dup](https://github.com/weizhongli/cdhit) should be downloaded!
+- [cd-hit-dup](https://github.com/weizhongli/cdhit) need to be installed!
 - The [taxonkit](https://bioinf.shenwei.me/taxonkit/download/) dataset should also be downloaded!
 
 ### Step 2: Install VirID via pip
