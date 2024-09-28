@@ -13,8 +13,10 @@ In evaluations with real-world samples, VirID was able to identity RNA viruses o
 ---
 **Associated papers**
 
-Preprint
-- [Yang Z, Shan Y, Liu X, et al. VirID: Beyond Virus Discovery-An Integrated Platform for Comprehensive RNA Virus Characterization[J]. bioRxiv, 2024: 2024.07. 05.602175.](https://www.biorxiv.org/content/10.1101/2024.07.05.602175v2.full.pdf+html)
+
+[Yang, Z., Shan, Y., Liu, X., Chen, G., Pan, Y., Gou, Q., Zou, J., Chang, Z., Zeng, Q., Yang, C. et al. (2024) VirID: Beyond Virus Discovery - An Integrated Platform for Comprehensive RNA Virus Characterization. Molecular Biology and Evolution.](https://academic.oup.com/mbe/advance-article/doi/10.1093/molbev/msae202/7781993?searchresult=1)
+
+
 
 
 ## VirID workflow
