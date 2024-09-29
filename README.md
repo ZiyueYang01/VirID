@@ -1,5 +1,10 @@
 # **VirID**: Beyond Virus Discovery - An Integrated Platform for Comprehensive RNA Virus Characterization
 ![python3.8](https://img.shields.io/badge/python-3.8-brightgreen)
+---
+
+![Image](./info/VirID_Cover_white.png)
+
+---
 
 RNA viruses exhibit vast phylogenetic diversity and can significantly impact public health and agriculture. However, current bioinformatics tools for viral discovery from metagenomic data frequently generate false positive virus results, overestimate viral diversity, and misclassify virus sequences. Additionally, current tools often fail to determine virus-host associations, which hampers investigation of the potential threat posed by a newly detected virus. 
 
