@@ -1,6 +1,4 @@
 # **VirID**: Beyond Virus Discovery - An Integrated Platform for Comprehensive RNA Virus Characterization
-![python3.8](https://img.shields.io/badge/python-3.8-brightgreen)
----
 
 ![Image](./info/VirID_Cover_white.png)
 
@@ -41,6 +39,11 @@ In evaluations with real-world samples, VirID was able to identity RNA viruses o
 VirID requires third-party packages from the conda-forge and bioconda channels
 
 ```shell
+conda create -n VirID
+conda activate VirID
+```
+
+```shell
 conda install -c bioconda blast bbmap seqkit  mafft megahit trimal  pplacer  taxonkit  bowtie2
 conda install taxonkit diamond==2.1.4  bowtie2 samtools==1.16.1
 pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  tqdm
@@ -52,8 +55,20 @@ pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  
   - mafft v7.520 ；trimal v1.4.1 ；makeblastdb,blastn,blastp v2.13.0+
   - samtools v1.16.1 ；diamond v2.1.4
 
-- [cd-hit-dup](https://github.com/weizhongli/cdhit) need to be installed!
+- [cd-hit-dup](https://github.com/weizhongli/cdhit) need to be installed! (you need to compile the cd-hit code)
+
+In addition, we also provide a compiled [cd-hit-dup](https://github.com/ZiyueYang01/VirID/blob/main/package/cd-hit-dup), which you can download directly，and then write its address on the server to the environment variable：
+（There may be incompatibilities due to different machines or environments, so we still recommend compiling the cd-hit source code yourself）
+
+```shell
+export PATH="/path/to/cd-hit-dup:$PATH"
+chmod 777 /path/to/cd-hit-dup/cd-hit-dup
+```
+
+
 - The [taxonkit](https://bioinf.shenwei.me/taxonkit/download/) dataset should also be downloaded!
+
+
 
 ### Step 2: Install VirID via pip
 
