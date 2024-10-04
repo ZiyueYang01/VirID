@@ -4,7 +4,7 @@ from os import system
 import pandas as pd
 import sys
 from VirID.config.config import RdRP_DB_PATH, NR_DB_PATH, rRNA_DB_PATH
-from VirID.external.fasta_process import Rmdup, Seqkit
+from VirID.external.fasta_process import Seqkit
 from VirID.external.reads_tool import Bowtie2, Megahit
 from VirID.external.blast import Diamond 
 from VirID.phytree.translate import Translate
@@ -21,37 +21,21 @@ class assembly_and_basic_annotation(object):
         self.logger = logging.getLogger('timestamp')
 
     def _reads_qc_single(self,reads):
-        system(f'bbduk.sh \
-            in={reads} \
-            out={self.out_dir}/step1_QC.fq.gz \
-            maq=10 qtrim=r trimq=10 ftl=5 minlen=90 > /dev/null 2>&1 ')
-        system(f'bbduk.sh \
-            in={self.out_dir}/step1_QC.fq.gz  \
-            out={self.out_dir}/step2_QC.fq \
-            entropy=0.5 entropywindow=50 entropyk=5 > /dev/null 2>&1 ')
-
-        rmdup_item  = Rmdup()
-        rmdup_item.run([f"{self.out_dir}/step2_QC.fq"], [f"{self.out_dir}/step3_QC_cdhit.fq"])
-        return [str(f"{self.out_dir}/step3_QC_cdhit.fq")]
+        system(f'fastp -i {reads} \
+               -o {self.out_dir}/step3_QC.fq \
+                -h {self.out_dir}/step3_QC.html --dup_calc_accuracy 4 \
+                    --dont_eval_duplication --low_complexity_filter --thread {self.threads}')
+        return [str(f"{self.out_dir}/step3_QC.fq")]
 
 
     def _reads_qc_double(self,reads_1,reads_2):
-        system(f'bbduk.sh \
-                in1={reads_1} in2={reads_2} \
-                out1={self.out_dir}/step1_QC_1.fq.gz \
-                out2={self.out_dir}/step1_QC_2.fq.gz \
-                maq=10 qtrim=r trimq=10 ftl=5 minlen=90 > /dev/null 2>&1 ')
-        system(f'bbduk.sh \
-                in1={self.out_dir}/step1_QC_1.fq.gz \
-                in2={self.out_dir}/step1_QC_2.fq.gz \
-                out1={self.out_dir}/step2_QC_1.fq \
-                out2={self.out_dir}/step2_QC_2.fq \
-                entropy=0.5 entropywindow=50 entropyk=5 > /dev/null 2>&1')
-        rmdup_item  = Rmdup()
-        out_file = [str(f"{self.out_dir}/step3_QC_cdhit_1.fq"),str(f"{self.out_dir}/step3_QC_cdhit_2.fq")]
-        rmdup_item.run(
-            [str(f"{self.out_dir}/step2_QC_1.fq"),str(f"{self.out_dir}/step2_QC_2.fq")],
-            out_file)
+
+        system(f"fastp -i {reads_1} -I {reads_2} \
+               -o {self.out_dir}/step3_QC_1.fq  -O {self.out_dir}/step3_QC_2.fq  \
+                -h {self.out_dir}/step3_QC.html --detect_adapter_for_pe --dup_calc_accuracy 4 \
+                    --dont_eval_duplication --low_complexity_filter --thread {self.threads} ")
+        
+        out_file = [str(f"{self.out_dir}/step3_QC_1.fq"),str(f"{self.out_dir}/step3_QC_2.fq")]
         return out_file
     
 
