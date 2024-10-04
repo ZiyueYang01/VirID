@@ -1,6 +1,4 @@
 # **VirID**: Beyond Virus Discovery - An Integrated Platform for Comprehensive RNA Virus Characterization
-![python3.8](https://img.shields.io/badge/python-3.8-brightgreen)
----
 
 ![Image](./info/VirID_Cover_white.png)
 
@@ -41,6 +39,11 @@ In evaluations with real-world samples, VirID was able to identity RNA viruses o
 VirID requires third-party packages from the conda-forge and bioconda channels
 
 ```shell
+conda create -n VirID
+conda activate VirID
+```
+
+```shell
 conda install -c bioconda blast bbmap seqkit  mafft megahit trimal  pplacer  taxonkit  bowtie2
 conda install fastp taxonkit diamond==2.1.4  bowtie2 samtools==1.16.1
 pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  tqdm
@@ -53,6 +56,8 @@ pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  
   - samtools v1.16.1 ；diamond v2.1.4
 
 - The [taxonkit](https://bioinf.shenwei.me/taxonkit/download/) dataset should also be downloaded!
+
+
 
 ### Step 2: Install VirID via pip
 
