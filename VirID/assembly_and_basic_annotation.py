@@ -75,7 +75,7 @@ class assembly_and_basic_annotation(object):
 
         elif len(self.reads) == 1:
             after_qc_file = self._reads_qc_single(self.reads[0])
-            filename = os.path.basename(self.reads[0 ]).split('.')[0]
+            filename = os.path.basename(self.reads[0]).split('.')[0]
             rm_rRNA_file = [os.path.join(self.out_dir, "step4_rRNA_output.fq.gz")]
 
         self.logger.info('[assembly_and_basic_annotation] Remove rRNA')
