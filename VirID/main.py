@@ -50,20 +50,6 @@ class OptionsParser(object):
 
         accession_tax_VirusesFlitered_file = assembly_and_basic_annotation_item.run(options,rm_rRNA_file,filename)
 
-        if len(reads_list) == 2:
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step1_QC_1.fq.gz"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step1_QC_2.fq.gz"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step2_QC_1.fq"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step2_QC_2.fq"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step3_QC_cdhit_1.fq"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step3_QC_cdhit_1.fq.clstr"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step3_QC_cdhit_1.fq2.clstr"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step3_QC_cdhit_2.fq"))
-        else:
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step1_QC.fq.gz"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step2_QC.fq"))
-            os.remove(os.path.join(assembly_and_basic_annotation_path,"step3_QC_cdhit.fq"))
-
         if not os.path.isfile(accession_tax_VirusesFlitered_file):
             self.logger.log(LOG_TASK,'END Primary Screen PART...')
             sys.exit()
