@@ -163,5 +163,9 @@ VirID phylogenetic_analysis -classify_i test/test_contig.fasta   \
 	-out_dir out_path   --threads 90 --keep_dup
 ```
 
+### Update notes
+- 2024/10 v2.0
+  - The new version replaces the original QC software with fastp, which does not affect the accuracy of the results and is easier to install.
+
 
 **If you encounter problems during use, feel free to raise an issue.**
