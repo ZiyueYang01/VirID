@@ -23,7 +23,7 @@ class assembly_and_basic_annotation(object):
     def _reads_qc_single(self,reads):
         system(f'fastp -i {reads} \
                -o {self.out_dir}/step3_QC.fq \
-                -h {self.out_dir}/step3_QC.html --dup_calc_accuracy 4 \
+                -h {self.out_dir}/step3_QC.html --dup_calc_accuracy 4  --dedup \
                     --dont_eval_duplication --low_complexity_filter --thread {self.threads}')
         return [str(f"{self.out_dir}/step3_QC.fq")]
 
@@ -32,7 +32,7 @@ class assembly_and_basic_annotation(object):
 
         system(f"fastp -i {reads_1} -I {reads_2} \
                -o {self.out_dir}/step3_QC_1.fq  -O {self.out_dir}/step3_QC_2.fq  \
-                -h {self.out_dir}/step3_QC.html --detect_adapter_for_pe --dup_calc_accuracy 4 \
+                -h {self.out_dir}/step3_QC.html --detect_adapter_for_pe --dedup --dup_calc_accuracy 4 \
                     --dont_eval_duplication --low_complexity_filter --thread {self.threads} ")
         
         out_file = [str(f"{self.out_dir}/step3_QC_1.fq"),str(f"{self.out_dir}/step3_QC_2.fq")]
