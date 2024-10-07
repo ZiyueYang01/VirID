@@ -22,8 +22,20 @@ In evaluations with real-world samples, VirID was able to identity RNA viruses o
 
 ---
 
+### Update logs
+- 2024/10/06 v1.1
+  - Updated the dependency tool used in the quality control phase to `fastp`, which is more adaptable to different environments.
+
+
+**If you encounter problems during use, feel free to raise an issue.**
+
+
+---
+
 
 ## VirID workflow
+
+
 
 
 
@@ -163,9 +175,3 @@ VirID phylogenetic_analysis -classify_i test/test_contig.fasta   \
 	-out_dir out_path   --threads 90 --keep_dup
 ```
 
-### Update notes
-- 2024/10 v2.0
-  - The new version replaces the original QC software with fastp, which does not affect the accuracy of the results and is easier to install.
-
-
-**If you encounter problems during use, feel free to raise an issue.**
