@@ -23,7 +23,7 @@ In evaluations with real-world samples, VirID was able to identity RNA viruses o
 ---
 
 ### Update logs
-- 2024/10/06 v1.1
+- 2024/10/06 v2.0.3
   - Updated the dependency tool used in the quality control phase to `fastp`, which is more adaptable to different environments.
 
 
