@@ -20,6 +20,12 @@ In evaluations with real-world samples, VirID was able to identity RNA viruses o
 [Yang Z, Shan Y, Liu X, Chen G, Pan Y, Gou Q, Zou J, Chang Z, Zeng Q, Yang C, et al. 2024. VirID: Beyond Virus Discovery - An Integrated Platform for Comprehensive RNA Virus Characterization. Molecular biology and evolution.](https://academic.oup.com/mbe/advance-article/doi/10.1093/molbev/msae202/7781993?searchresult=1)
 
 
+
+
+
+
+:fire::collision:**Our group has also developed [LucaProt](https://github.com/alibaba/LucaProt), a model for identifying RNA virus RdRP protein sequences based on artificial intelligence algorithms, which is now published in [___Cell___](https://www.cell.com/cell/fulltext/S0092-8674(24)01085-7).**
+
 ---
 
 ### Update logs
