@@ -22,7 +22,6 @@ class Tree_taxon(object):
 
 
 
-#这里我想构建一个字典，保存一下，不能每次都进行blastp吧，太浪费时间了
     def find_ref_class(self,node_ID):
         self.csvPD = pd.read_csv(self.ref_tsv,sep=',',header=0)
         for i in range(len(self.csvPD)):

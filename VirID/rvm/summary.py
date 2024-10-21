@@ -79,8 +79,8 @@ class Summary(object):
         else:    
             orflength_add = pd.merge(left = RdRP_info_merge_table, right = ORFLength_table, on = 'qseqid',how = 'left')
             nvi = self._novel_virus_identify(orflength_add) 
-            final_output = nvi[['qseqid','NR_qlen','longest_aa_length','NR_sseqid','protein','NR_Virus','super_group','kindom','phylum','class','order','family','genus','species','virus_type']]
-
+            final_output = nvi[['qseqid','NR_qlen','longest_aa_length_x','NR_sseqid','protein','NR_Virus','super_group','kindom','phylum','class','order',
+                                'family','genus','species','virus_type']].rename(columns={'longest_aa_length_x':'longest_aa_length'})
 
         output = final_output.rename(columns={'longest_aa_length': 'Longest_aa_length','NR_qlen':'qlen',
                                         'protein':'NR_protein','super_group':'RdRP_super_group',
