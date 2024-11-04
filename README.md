@@ -156,9 +156,10 @@ If you already have these databases, you can skip the download step and just con
 
 
 
-#### [NCBI Nucleotide Sequence Database (NT)](./info/db_NT.md)
+#### [NCBI Nucleotide Sequence Database (NT) without Virus sequences ](./info/db_NT.md)
+**Note that if you use your own complete NT library, some putative RNA virus sequences may be missed.**
 
-
+----
 
 ## Usage
 VirID *medthod* [options]
