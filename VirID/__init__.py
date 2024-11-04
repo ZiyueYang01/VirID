@@ -1,6 +1,6 @@
 __author__ = 'YangZiyue, ShanYongtao'
 __author_email__ = 'yangzy58@mail2.sysu.edu.cn'
-__description__ = 'A Comprehensive Platform for Discovering and Characterizing RNA Viruses in Depth.'
+__description__ = 'Beyond Virus Discovery - An Integrated Platform for Comprehensive RNA Virus Characterization'
 __license__ = 'MIT'
 __name__ = 'VirID'
 __python_requires__ = '==3.8'
