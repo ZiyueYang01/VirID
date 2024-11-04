@@ -48,11 +48,37 @@ def __translate_table(group):
     
 def __group_list(group):
     group.add_argument('--group_list', nargs='*', default='',
-                       help='Multiple specific Super-Group with commas spacing,eg: Astro-Poty,Hepe-Virga')
+                       help='Multiple specific Super-Group with commas spacing,eg: Astro-Poty,Hepe-Virga
+                       option:
+                                Astro-Poty
+                                Birna-Permutotetra
+                                Negative_Bunya-Arena
+                                Cysto
+                                Flavi
+                                Hepe-Virga
+                                Hypo
+                                Luteo-Sobemo
+                                Negative_Mono-Chu
+                                Narna-Levi
+                                Nido
+                                Negative_Orthomyxo
+                                Partiti-Picobirna
+                                Picorna-Calici
+                                Weivirus
+                                Yanvirus
+                                Yuevirus
+                                Zhaovirus
+                                Qinvirus
+                                Reo
+                                na-daxi
+                                other-negative
+                                Tombus-Noda
+                                Toti-Chryso
+ ')
 
 def __no_trim_contamination(group):
     group.add_argument('--no_trim_contamination',  action='store_true', default=False,
-    help='It is not necessary to compare nt library to cut the sequence')
+    help='Whether contamination control operations are performed (takes longer time).')
 
 def __keep_dup(group):
     group.add_argument('--keep_dup',  action='store_true', default=False,
@@ -64,7 +90,10 @@ def __ultra_sensitive(group):
 
 def __group_aa_length(group):
     group.add_argument('--group_aa_length', type=str, nargs='+',default=None,
-    help='Choose different length thresholds for each supercluster')
+    help='Choose different length thresholds for each superclade, superclade list see group_list.
+        Usage:
+           ... --group_aa_length 400, Negative_Bunya-Arena 350
+           ')
 
 def __help(group):
     group.add_argument('-h', '--help', action="help", help="show help message")
