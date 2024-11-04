@@ -11,20 +11,25 @@ from VirID.main import OptionsParser
 def print_help():
     print('''\
 
-              ...::: VirID v1 :::...
+              ...::: VirID :::...
 
-  Tools for finding potential RNA viruses from reads.
+  An Integrated Platform for Comprehensive RNA Virus Characterization.
 
   VirID  <medthod>  [options]
   
   Methods:
-    end_to_end -> full pipeline to identify and classify potential virus sequences
-    assembly_and_basic_annotation -> identify potential candidate virus sequences
-    phylogenetic_analysis -> evolutionary analysis and estimate pathogenicity on contigs
+  
+    end_to_end                           -> Complete workflow to discover potential RNA virus sequences and perform further phylogenetic characterisation.
+                                            ( end_to_end  = assembly_and_basic_annotation + phylogenetic_analysis )
+    assembly_and_basic_annotation        -> Identification of potential putative RNA virus sequences.
+    phylogenetic_analysis                -> Phylogenetic analysis and pathogenicity estimation on putative (or other input) sequences.
+    
   Tools:
+  
     install -> install python package
     download -> data download
-  Detail: VirID <medthod> -h for command specific help
+    
+  Detail: VirID <Method> -h for command specific help
     ''')
 
 def main():
