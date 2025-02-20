@@ -69,9 +69,15 @@ pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  
 **Notes:**
 
 - Version of the tool available for reference:
-  - bbduk.sh：bbmap v39.01 ； Seqkit v2.4.0 ；bowtie2 v2.5.1 ；megahit v1.2.9
-  - mafft v7.520 ；trimal v1.4.1 ；makeblastdb,blastn,blastp v2.13.0+ (**If encountering errors such as 'core dump', please use BLAST+ v2.15 or lower version**)
-  - samtools v1.16.1 ；diamond v2.1.4
+  - bbduk.sh：bbmap v39.01
+  - Seqkit: v2.4.0
+  - bowtie2: v2.5.1
+  - megahit: v1.2.9
+  - mafft: v7.520
+  - trimal: v1.4.1
+  - [NCBI BLAST+](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/) (makeblastdb,blastn,blastp), v2.13.0+ (**If v2.16.0 encountering errors such as 'core dump', try v2.15 or lower version**)
+  - samtools: v1.16.1
+  - [diamond](https://github.com/bbuchfink/diamond): v2.1.4 It is recommended to download directly from the GitHub homepage. The version downloaded from Conda may lack some features.
 
 - The [taxonkit](https://bioinf.shenwei.me/taxonkit/download/) dataset should also be downloaded!
 
