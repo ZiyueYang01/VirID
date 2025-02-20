@@ -70,7 +70,7 @@ pip install Bio biopython DendroPy  matplotlib    numpy   pandas regex seaborn  
 
 - Version of the tool available for reference:
   - bbduk.sh：bbmap v39.01 ； Seqkit v2.4.0 ；bowtie2 v2.5.1 ；megahit v1.2.9
-  - mafft v7.520 ；trimal v1.4.1 ；makeblastdb,blastn,blastp v2.13.0+
+  - mafft v7.520 ；trimal v1.4.1 ；makeblastdb,blastn,blastp v2.13.0+ (**If encountering errors such as 'core dump', please use BLAST+ v2.15 or lower version**)
   - samtools v1.16.1 ；diamond v2.1.4
 
 - The [taxonkit](https://bioinf.shenwei.me/taxonkit/download/) dataset should also be downloaded!
