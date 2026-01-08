@@ -99,7 +99,7 @@ R
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("ggtree")
-packages=c("tidyverse"，"ggplot2","RColorBrewer","phangorn","networkD3","jsonlite","dplyr","networkD3","jsonlite")
+packages=c("tidyverse","ggplot2","RColorBrewer","phangorn","networkD3","jsonlite","dplyr","networkD3","jsonlite")
 ipak <- function(pkg){
     new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
     if (length(new.pkg))  
